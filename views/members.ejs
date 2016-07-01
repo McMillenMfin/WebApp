@@ -1,0 +1,48 @@
+	<% include ./partials/header %>
+	
+		<!-- What is -->
+		<div id="whatis" class="content-section-b" style="border-top: 0">
+		<div class="container">
+
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h4>Participants</h4>				
+			</div>
+
+			<% plan.members.forEach(function(member, i){ %>
+			
+    			<div  class="container">
+    				<div style="background-color:#c9cca7; margin-bottom: 10px;" class="sweet col-md-offset-3 col-md-6">
+    					
+    					<% if(i == 0){ %>
+    					
+    					<p><strong>Primary Plan Member</strong></p>
+    					<% }else{ %>
+    					<p><strong>Member</strong></p>
+    					<% } %>
+    					
+    					Name: <%= member.name %>
+    					<br>Gender: <%= member.gender %>
+    					<br>Age: <%= member.age %>
+    					<br>Smokes: <%= member.smokes %>
+    					<br>Height: <%= member.height %>
+    					<br>Weight: <%= member.weight %>
+    					<form action="/<%=plan._id%>/participants/<%=member._id%>?_method=DELETE" method='POST'>
+    						<input type='submit' class='btn btn-xs btn-danger pull-right' value='delete'>
+    					</form>
+    				</div>
+    			</div>
+			
+			<% }); %>
+
+			
+		</div>
+		</div>
+	
+
+	
+				
+						<div class="morph-button wow pulse morph-button-inflow morph-button-inflow-1 hidden">
+							<button type="button "><span></span></button>
+						</div>
+			
+    <% include ./partials/footer %>
