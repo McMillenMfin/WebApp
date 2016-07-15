@@ -1283,13 +1283,38 @@ p.copyright {
 }
 
 .tbutt{
-  height: 60px;
+  height: 40px;
 }
 .graph{
 	display: none;
 }
-.texture{
+/*.texture{
 	background-image: url(texture.jpg);
 	padding: 5px;
 	margin: 5px;
+}*/
+.text-center{text-align: center}
+.bar-img{
+	width: 100%;
+	height: 100%;
 }
+.bar-img:hover{
+	opacity: 0.85;
+}
+.bar-div{height: 40px;}
+.tbutt i {font-size: 100%}
+
+.button-div{
+	height: 40px;
+	width: 60px;
+	padding: 0;
+	text-align: center;
+	margin: 0 auto;
+}
+.button-div a {
+	padding: 0; 
+	height: 100%;
+	width: 100%;
+}
+.button-div a i {padding-top: 5px}
+.button-div a .fa-plus {padding-top: 0}

@@ -13,19 +13,21 @@ app.use(methodOverride('_method'));
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+var server_ip 	= process.env.IP || "127.0.0.1",
+	server_port = process.env.PORT || 1337;
 
 //Plan routes
 app.get('/', function(req, res){
     Plan.find({}, function(err, plans){
-        if(err){console.log(err)}else{
+        if(err){console.log(err);}else{
             res.render('index', {plans: plans});
         }
-    })
+    });
     
 });
 app.post('/', function(req, res){
     Plan.create(req.body.plan, function(err, plan){
-        if(err){console.log(err); res.redirect('/')}else{
+        if(err){console.log(err); res.redirect('/');}else{
             res.redirect('/');
         }
     });
@@ -34,7 +36,7 @@ app.post('/', function(req, res){
 app.get('/:id/participants', function(req, res){
     
     Plan.findById(req.params.id).populate('members').exec(function(err, plan){
-        if(err){console.log(err); res.redirect('/')}else{
+        if(err){console.log(err); res.redirect('/');}else{
             res.render('members', {plan:plan});
         }
     });
@@ -46,7 +48,7 @@ app.get('/view', function(req, res){
 });
 app.get('/:id', function(req, res){
     Plan.findById(req.params.id).populate('members').exec(function(err, plan){
-        if(err){console.log(err); res.redirect('/')}else{
+        if(err){console.log(err); res.redirect('/');}else{
             res.render('view', {plan: plan});
         }
     });
@@ -56,16 +58,16 @@ app.get('/:id', function(req, res){
 //members add
 app.get('/:id/member', function(req, res){
    Plan.findById(req.params.id, function(err, plan){
-       if(err){console.log(err); res.redirect('/')}else{
+       if(err){console.log(err); res.redirect('/');}else{
           res.render("participant", {plan: plan});
        }
    });
 });
 app.post('/:id/member', function(req, res){
     Plan.findById(req.params.id, function(err, plan){
-        if(err){console.log(err); res.redirect('/')}else{
+        if(err){console.log(err); res.redirect('/');}else{
             Member.create(req.body.member, function(err, member){
-               if(err){console.log(err); res.redirect('/')}else{
+               if(err){console.log(err); res.redirect('/');}else{
                    plan.members.push(member);
                    plan.primary = plan.members[0];
                    plan.save();
@@ -79,7 +81,7 @@ app.post('/:id/member', function(req, res){
 //DELETE member
 app.delete('/:id/participants/:p_id', function(req, res){
   Member.findByIdAndRemove(req.params.p_id, function(err){
-      if(err){console.log(err); res.redirect('/')}else{
+      if(err){console.log(err); res.redirect('/');}else{
           res.redirect('/' + req.params.id);
       }
   });
@@ -110,4 +112,4 @@ app.put('/:id/:member_id', function(req, res){
     res.redirect('/' + req.params.id);
 })
 
-app.listen(process.env.PORT, process.env.IP, function(){console.log('planapp server started...')});
+app.listen(process.env.PORT, process.env.IP, function(){console.log('planapp server started...'+server_ip+":"+server_port);});

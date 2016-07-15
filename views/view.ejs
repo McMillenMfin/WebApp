@@ -1,24 +1,24 @@
 	<% include ./partials/header %>
 	
 	<!-- What is -->
-	<div id="whatis" class="content-section-b" style="border-top: 0">
+	<div id="whatis" class="content-section-b" style="border-top: 0; padding-bottom: 30px; padding-top: 30px;">
 		<div class="container">
 
 			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
 				<h2>Plan Participants</h2>
 				
-				<p class="lead" style="margin-top:0">for <%= plan.name %></p>
+				<p class="text-center" style="margin-top:0">for <%= plan.name %></p>
 				
 			</div>
 			<br>
-			<div class="col-md-12 texture ">
+			<div class="col-md-12">
 				<div class=' row'>
-					<div class="col-xs-6  wow fadeInDown text-center">
+					<div class="col-xs-4 col-xs-offset-2  wow fadeInDown text-center">
 					  <h4 class='overview'>Project Overview</h4>
 					</div>
 			
 						<div class="col-xs-3 wow fadeInDown text-center">
-							<h4>Status</h4>
+							<h4>% Complete</h4>
 						</div>
 						
 						<div class="col-xs-3 wow fadeInDown text-center">
@@ -35,25 +35,23 @@
 			
 			<div class="row padd">
 				<div class="col-xs-2  wow fadeInDown text-center">
+					<div class="button-div">
 				  <a href="/<%= plan._id %>/<%= member._id %>/edit" class="btn btn-primary tbutt"><i style='font-size: 230%;' class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
 				</div>
+					</div>
 				<div class="col-xs-4  wow fadeInDown text-center">
 				  <button  class="btn mybutton_cyano btn-block tbutt"><%= member.name %></button>
 				</div>
 				
 				<% var n = 0; var img = 'Grey.jpp'; if(member.name){n++}; if(member.gender){n++}; if(member.age){n++}; if(member.smokes){n++}; if(member.height){n++}; if(member.weight){n++}; %>
 				<% if(n == 0){img = 'Grey.jpg'}; if(n <= 2 && n > 0){img = 'Red.jpg'}; if(n <= 4 && n > 2){img = 'Yellow.jpg'}; if(n <= 6 && n > 4){img = 'Green.jpg'}; %>
-				
-				<script>
-					console.log('<%=n%>');
-				</script>
 			
-						<div class="col-xs-3 wow fadeInDown text-center">
-							<img class="img img-responsive img-rounded" src="/img/<%= img %>">
+						<div class="col-xs-3 wow fadeInDown text-center bar-div">
+							<img class="img img-responsive img-rounded bar-img" src="/img/<%= img %>">
 						</div>
 						
-						<div class="col-xs-3 wow fadeInDown text-center">
-							<img class="img img-responsive img-rounded" src="/img/Green.jpg">
+						<div class="col-xs-3 wow fadeInDown text-center bar-div">
+							<img class="img img-responsive img-rounded bar-img" src="/img/Green.jpg">
 						</div>
 				
 			</div>
@@ -84,9 +82,11 @@
 			
 			<div class="row padd">
 				<div class="col-xs-2  wow fadeInDown text-center">
-				  <a href="/<%= plan._id %>/member" class="btn btn-primary tbutt"><i style='font-size: 300%;' class="fa fa-plus" aria-hidden="true"></i></a>
+					<div class="button-div">
+				  <a href="/<%= plan._id %>/member" class="btn btn-primary tbutt" ><i style='font-size: 300%;' class="fa fa-plus" aria-hidden="true"></i></a>
 				</div>
-				<div class="col-xs-4  wow fadeInDown text-center">
+					</div>
+				<!-- <div class="col-xs-4  wow fadeInDown text-center">
 				  <button  class="btn mybutton_cyano btn-block tbutt">Add Plan Participant</button>
 				</div>
 			
@@ -96,7 +96,7 @@
 						
 						<div class="col-xs-3 wow fadeInDown text-center">
 							<img class="img img-responsive img-rounded" src="/img/Grey.jpg">
-						</div>
+						</div> -->
 				
 			</div>
 
@@ -108,9 +108,12 @@
 	
 
 	<!-- Use it -->
-    <div id ="useit" class="content-section-a">
+    <div id ="useit" class="content-section-a" style="padding-bottom: 30px; padding-top: 30px;">
 
         <div class="container">
+        	<div class="text-center" style="padding-bottom: 20px">
+        		<h2>Plan Summary</h2>
+        	</div>
 			
             <div class="row">
 				<div class="col-sm-3">
