@@ -14,25 +14,25 @@
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
- 
+
     <!-- Custom Google Web Font -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'>
-	
+
     <!-- Custom CSS-->
     <link href="css/general.css" rel="stylesheet">
-	
+
 	 <!-- Owl-Carousel -->
     <link href="css/custom.css" rel="stylesheet">
 	<link href="css/owl.carousel.css" rel="stylesheet">
     <link href="css/owl.theme.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
-	
+
 	<!-- Magnific Popup core CSS file -->
-	<link rel="stylesheet" href="css/magnific-popup.css"> 
-	
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
 	<script src="js/modernizr-2.8.3.min.js"></script>  <!-- Modernizr /-->
 	<!--[if IE 9]>
 		<script src="js/PIE_IE9.js"></script>
@@ -53,26 +53,26 @@
 	<div id="preloader">
 		<div id="status"></div>
 	</div>
-	
+
 	<!-- FullScreen -->
     <div class="intro-header">
 		<div class="col-xs-12 text-center abcen1">
-			<h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">Plan App</h1>
+			<h1 class="h1_home wow fadeIn" data-wow-delay="0.4s">Plan App Demo</h1>
 			<ul class="list-inline intro-social-buttons">
 				<li><a href="#newplan" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s"><span class="network-name">New Plan</span></a>
 				</li>
 				<li id="download" ><a href="#whatis" class="btn  btn-lg mybutton_standard wow swing wow fadeIn" data-wow-delay="1.2s"><span class="network-name">View Plans</span></a>
 				</li>
 			</ul>
-		</div>    
+		</div>
         <!-- /.container -->
 		<div class="col-xs-12 text-center abcen wow fadeIn">
-			<div class="button_down "> 
+			<div class="button_down ">
 				<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s"  href="#whatis"> <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
 			</div>
 		</div>
     </div>
-	
+
 	<!-- NavBar-->
 	<nav class="navbar-default" role="navigation">
 		<div class="container">
@@ -88,24 +88,24 @@
 
 			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					
+
 					<li class="menuItem"><a href="#whatis">Plan list</a></li>
 					<li class="menuItem"><a href="#newplan">New Plan</a></li>
 			</div>
-		   
+
 		</div>
-	</nav> 
-	
+	</nav>
+
 	<!-- What is -->
 	<div id="whatis" class="content-section-b" style="border-top: 0">
 		<div class="container">
 
 			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
 				<h2>List of Plans</h2>
-				
-			</div>			
+
+			</div>
 			<div class="row">
-				
+
 				<% plans.forEach(function(plan){ %>
 				<div class="col-sm-4  wow fadeInDown text-center">
 				  <img class="rotate" src="img/icon/laptop.svg" alt="Generic placeholder image">
@@ -113,21 +113,21 @@
 				  <p class="lead"> <%= plan.overview %> </p>
 				 <p><a href="/<%= plan._id %>" class="btn btn-embossed btn-primary view">View Plan</a></p>
 				</div><!-- /.col-lg-4 -->
-				
+
 				<% }); %>
-				
-				
+
+
 			</div><!-- /.row -->
-				
+
 		</div>
 	</div>
-	
 
 
-  
 
 
-	
+
+
+
 	<div  class="content-section-c ">
 		<div class="container">
 			<div class="row">
@@ -152,28 +152,28 @@
 							</div>
 						</div>
 				</div>
-			</div>	
+			</div>
 			</div>>
 		</div>
-	</div>	
-	
+	</div>
 
 
-	
 
-	
-	
+
+
+
+
     <footer>
       <div class="container">
         <div class="row">
           <div class="col-md-7">
             <h3 class="footer-title">copywrite &copy; twirlz</h3>
-            
-		   
-	   
+
+
+
           </div> <!-- /col-xs-7 -->
 
-          
+
         </div>
       </div>
     </footer>
@@ -189,13 +189,13 @@
 	  jQuery(function($) {
 		$(document).ready( function() {
 		  $('.navbar-default').stickUp();
-		  
+
 		});
 	  });
-	
+
 	</script>
 	<!-- Smoothscroll -->
-	<script type="text/javascript" src="js/jquery.corner.js"></script> 
+	<script type="text/javascript" src="js/jquery.corner.js"></script>
 	<script src="js/wow.min.js"></script>
 	<script>
 	 new WOW().init();
@@ -203,7 +203,7 @@
 	<script src="js/classie.js"></script>
 	<script src="js/uiMorphingButton_inflow.js"></script>
 	<!-- Magnific Popup core JS file -->
-	<script src="js/jquery.magnific-popup.js"></script> 
+	<script src="js/jquery.magnific-popup.js"></script>
 </body>
 
 </html>
